@@ -6,6 +6,10 @@ const arr = palabra.split(""); // Convertimos la palabra en un array de letras
 arr.reverse();                 // Invertimos el array
 const reverseword = arr.join(""); // Reconstruimos la palabra invertida
 
+//Comprobamos que el argumento que se pase a la función sea una palabra o frase.
+if (typeof word!== "string") {
+  console.log("Se necesita una palabra para hacer la comprobación");
+}
 // Comparamos las palabras ignorando mayúsculas y minúsculas
 if (palabra.toLowerCase() === reverseword.toLowerCase()) {
   console.log("Es un palíndromo");
