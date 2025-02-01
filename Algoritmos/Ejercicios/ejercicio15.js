@@ -1,1 +1,1 @@
-console.log("baby hellooo");
+// 15 - Crear un programa que devuelva los números primos hasta el número(n). 
