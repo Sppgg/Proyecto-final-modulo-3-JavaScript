@@ -1,15 +1,8 @@
-Final Project Module 3: JavaScript Algorithms and Interactive Webpage
+Module 3 Final Project - Codespace Academy: JavaScript and Interactive Webpage
 
 Table of Contents
 - [Introduction](#introduction)
-- [Features](#features)
-- [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Evaluation Criteria](#evaluation-criteria)
-- [Contributing](#contributing)
 
 ---
 
