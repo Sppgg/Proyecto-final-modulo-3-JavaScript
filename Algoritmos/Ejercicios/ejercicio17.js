@@ -33,7 +33,7 @@ function tieneParentesisBalanceados(str) {
     return contador === 0;
 }
 
-// 🔹 Pruebas
+//Pruebas
 console.log(tieneParentesisBalanceados("(())"));  // true
 console.log(tieneParentesisBalanceados("()()"));  // true
 console.log(tieneParentesisBalanceados("(()"));   // false

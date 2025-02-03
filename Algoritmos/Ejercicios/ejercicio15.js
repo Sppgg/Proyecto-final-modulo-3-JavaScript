@@ -3,11 +3,11 @@
 /* Los números primos son aquellos que solo son divisibles por ellos mismos. Si se intenta dividir por otro número nunca dará una cifra exacta salvo que se divida por 1 o por sí mismo */
 
 // Función que verifica si un número es primo
-function numeroPrimo(n) {
-    if (n < 2) return false; // Los números menores a 2 no son primos
+function numeroPrimo(numeroN) {
+    if (numeroN < 2) return false; // Los números menores a 2 no son primos
 
-    for (let i = 2; i <= Math.sqrt(n); i++) { // Optimización con raíz cuadrada
-        if (n % i === 0) {
+    for (let i = 2; i <= Math.sqrt(numeroN); i++) { // Optimización con raíz cuadrada
+        if (numeroN % i === 0) {
             return false; // Si es divisible por otro número, no es primo
         }
     }
@@ -15,9 +15,9 @@ function numeroPrimo(n) {
 }
 
 // Función que encuentra todos los números primos hasta n
-function encontrarPrimos(n) {
+function encontrarPrimos(numeroN) {
     let primos = [];
-    for (let i = 2; i <= n; i++) {
+    for (let i = 2; i <= numeroN; i++) {
         if (numeroPrimo(i)) {
             primos.push(i);
         }
@@ -26,11 +26,11 @@ function encontrarPrimos(n) {
 }
 
 // Pedimos el número al usuario
-let n = parseInt(prompt("Ingresa el número límite hasta el que encontraremos los números primos:"), 10);
+let numeroN = parseInt(prompt("Ingresa el número límite hasta el que encontraremos los números primos:"), 10);
 
 // Verificamos si la entrada es válida
-if (isNaN(n) || n < 2) {
+if (isNaN(numeroN) || numeroN < 2) {
     console.log("Ingresa un número válido mayor o igual a 2.");
 } else {
-    console.log(` Los números primos hasta ${n} son:`, encontrarPrimos(n));
+    console.log(` Los números primos hasta ${numeroN} son:`, encontrarPrimos(numeroN));
 }
