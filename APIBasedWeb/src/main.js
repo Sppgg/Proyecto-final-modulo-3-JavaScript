@@ -21,6 +21,7 @@ async function getAllProducts() {
     } else{
       const products = await response.json(); 
       console.log("Lista de productos:", products);
+      return products; // Retornamos los productos para poder usarlos más adelante
     }
 
   } catch (error) {
@@ -31,20 +32,21 @@ async function getAllProducts() {
 }
 
 // Llamar la función y probar en consola
-getAllProducts().then(products => console.log(products));
+getAllProducts()
+
 // getAllProducts por sí solo en un console log imprimirá una promesa pendiente. usando .then(+arrow function) espera a que la Promesa se resuelva y luego imprime los datos.
 
 
 //  --------------- PETICIÓN POST ---------------
 
-async function createNewProduct () {
+async function createNewProduct (newProduct) {
   let url = `${API_BASE_URL}/products`;
   try {
     const response = await fetch (url, {
       method: "POST",
       headers: 
       {"Content-Type": "application/json"},
-      body: JSON.stringify(data),
+      body: JSON.stringify(newProduct),
     })
     if (!response.ok) {
       throw new Error (`Error inesperado creando tu producto, inténtalo de nuevo`, response.status);      
@@ -55,49 +57,64 @@ async function createNewProduct () {
   } catch (error) {
     console.error("Error al crear el producto", error);
   }
-
-  
+}
+// Creamos un producto nuevo
+  const newProduct = {
+  title: "RGB Keyboard",
+  price: 49.99,
+  description: "gaming keyboard",
+  image: "https://via.placeholder.com/150",
+  category: "electronics" 
 }
 // Llamar a la función
 
-createNewProduct();
+createNewProduct(newProduct);
 
 //  --------------- PETICIÓN PUT ---------------
 
-async function editProduct () {
-const url = `${API_BASE_URL/products/`${id}`}`
+async function editProduct (id, updatedData) {
+  const url = `${API_BASE_URL}/products/${id}`;
 try {
   const response = await fetch (url, {
    method: "PUT",
    headers: {
     "Content-Type": "application/json" 
   },
-  body: JSON.stringify(data),
+  body: JSON.stringify(updatedData),
 })
 if (!response.ok) {
   throw new Error ("Algo fue mal, inténtalo de nuevo", response.status); 
 } else {
  const data = response.json();
-console.log("Producto editado con éxito");
+console.log("Producto editado con éxito"); 
+return data;
 }
 }
 catch (error) {
   console.error("Error al editar el producto", error);
-}} 
- 
+}
+} 
+const updatedData = {
+  title: 'laptop case',
+  price: 1200.99,
+  description: 'lorem ipsum set',
+  image: 'https://img.freepik.com/free-photo/keyboard-with-neon-lights-high-angle_23-2149680226.jpg?semt=ais_hybrid',
+  category: 'electronics',
+};
+
 // Llamamos a la función
-editProduct();
+editProduct(1, updatedData);
 
 //  --------------- PETICIÓN DELETE ---------------
 
-async function deleteProduct () {
-  const url = `${API_BASE_URL/products/`${id}`}`;
+async function deleteProduct (id) {
+  const url = `${API_BASE_URL}/products/${id}`;
   try {
     const response = await fetch (url, {
       method: "DELETE",
       headers: {
         "Content-Type":"Application/json",
-    }}),
+    },})
     if (!response.ok) {
       throw new Error ("Algo fue mal borrando el producto, inténtalo de nuevo", response.status)      
     } else {
@@ -111,6 +128,6 @@ async function deleteProduct () {
 }
 
 // Llamamos a la función
-deleteProduct();
+deleteProduct(8);
 
 //  --------------------FUNCIONES AUX-------------------------------
