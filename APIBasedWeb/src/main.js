@@ -1,4 +1,5 @@
 import './style.css'
+import './ui'
 const API_BASE_URL = "https://fakestoreapi.com";
 
 /* COMENZAMOS
@@ -52,7 +53,7 @@ async function createNewProduct (newProduct) {
       throw new Error (`Error inesperado creando tu producto, inténtalo de nuevo`, response.status);      
     } else {
       const data = await response.json();
-      console.log("producto creado con exito");
+      console.log("Producto creado con éxito");
     }
   } catch (error) {
     console.error("Error al crear el producto", error);
@@ -63,7 +64,7 @@ async function createNewProduct (newProduct) {
   title: "RGB Keyboard",
   price: 49.99,
   description: "gaming keyboard",
-  image: "https://via.placeholder.com/150",
+  image: "https://img.freepik.com/free-photo/keyboard-with-neon-lights-high-angle_23-2149680226.jpg?semt=ais_hybrid",
   category: "electronics" 
 }
 // Llamar a la función
@@ -98,7 +99,7 @@ const updatedData = {
   title: 'laptop case',
   price: 1200.99,
   description: 'lorem ipsum set',
-  image: 'https://img.freepik.com/free-photo/keyboard-with-neon-lights-high-angle_23-2149680226.jpg?semt=ais_hybrid',
+  image: 'https://media.istockphoto.com/id/1051663116/es/foto/hombre-de-negocios-joven-sacando-un-ordenador-port%C3%A1til-en-un-estuche-de-piel-en-la-oficina.jpg?s=612x612&w=is&k=20&c=88MkTtSGtRUW60RNln06xA_eTzP2Z0R_xkht4M9IAx0=',
   category: 'electronics',
 };
 
@@ -131,3 +132,56 @@ async function deleteProduct (id) {
 deleteProduct(8);
 
 //  --------------------FUNCIONES AUX-------------------------------
+
+//Función Auxiliar para mostrar todos los productos
+
+function displayAll(products) {
+  // convertimos el contenedor HTML en una constante para poder trabajar en él
+  const productsContainer = document.getElementById("products-container");
+  productsContainer.innerHTML = "";
+  // creamos una tarjeta para cada producto
+  products.forEach(product => {
+    // creamos una constante para convertir cada producto en un elemento HTML
+    const productElement = document.createElement("div");
+    productElement.id = `product-${product.id}`;
+    productElement.innerHTML = `
+    <h2>${product.title}</h2>
+    <p>${product.description}</p>
+    <p>Price: ${product.price}€</p>
+    <img src="${product.image}" alt="${product.title}" width="100"/>`;
+
+    // Añadimos un botón funcional que elimine productos
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent= "Delete";
+    deleteButton.addEventListener("click",() => deleteProduct(product.id));
+    productElement.appendChild(deleteButton);
+
+    // Añadimos un botón que edite los productos renderizados
+    const editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+    editButton.addEventListener("click", () => 
+      showEditForm(
+        product.id,
+        product.title,
+        product.price,
+        product.description,
+        product.image,
+        product.category
+      )
+    );
+    productElement.appendChild(editButton);
+
+    productsContainer.appendChild(productElement);
+  });
+
+}
+// Esperamos a obtener los productos antes de mostrarlos
+async function loadAndDisplayProducts() {
+  const products = await getAllProducts(); // Esperamos a obtener los datos
+  displayAll(products); // Ahora sí los mostramos en la UI
+}
+
+// Llamamos a la función al cargar la página
+loadAndDisplayProducts();
+
+displayAll(products);
