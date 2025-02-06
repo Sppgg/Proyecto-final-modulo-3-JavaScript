@@ -1,5 +1,4 @@
 import './style.css'
-import './ui'
 const API_BASE_URL = "https://fakestoreapi.com";
 
 /* COMENZAMOS
