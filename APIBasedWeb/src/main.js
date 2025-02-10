@@ -1,4 +1,3 @@
-import './style.css'
 const API_BASE_URL = "https://fakestoreapi.com";
 
 // Función para mostrar u ocultar secciones según el estado de autenticación
