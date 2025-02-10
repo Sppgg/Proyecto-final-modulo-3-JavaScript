@@ -1,15 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fake Store SL</title>
+    <title>Tienda de Productos</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <h1>Lista de productos</h1>
-    <div id="products-container"></div>
-    <div id="product-creator"></div>
-    <script type="module" src="/src/main.js"></script>
+    <!-- Contenedor de Login -->
+    <div id="login-container">
+      <h1>Iniciar Sesión</h1>
+      <form id="login-form">
+        <input
+          type="text"
+          id="username"
+          placeholder="Nombre de usuario"
+          required
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Contraseña"
+          required
+        />
+        <button type="submit">Ingresar</button>
+      </form>
+    </div>
+
+    <!-- Contenedor Principal -->
+    <div id="main-container" style="display: none">
+      <h1>Tienda de Productos Fake Store SL</h1>
+      <!-- Botón para Cerrar Sesión -->
+      <button id="logout-button">Cerrar Sesión</button>
+
+      <!-- Formulario para agregar un nuevo producto -->
+      <form id="add-product-form">
+        <h2>Agregar Nuevo Producto</h2>
+        <input type="text" id="new-title" placeholder="Título" required />
+        <input type="number" id="new-price" placeholder="Precio" required />
+        <textarea
+          id="new-description"
+          placeholder="Descripción"
+          required
+        ></textarea>
+        <input
+          type="text"
+          id="new-image"
+          placeholder="URL de la imagen"
+          required
+        />
+        <input type="text" id="new-category" placeholder="Categoría" required />
+        <button type="submit">Agregar Producto</button>
+      </form>
+
+      <!-- Contenedor donde se mostrarán los productos -->
+      <div id="products-container"></div>
+
+      <!-- Contenedor para el formulario de edición -->
+      <div id="edit-form-container"></div>
+    </div>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="src/main.js"></script>
   </body>
 </html>
