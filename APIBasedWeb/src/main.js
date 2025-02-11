@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-=======
-import './style.css'
->>>>>>> f761e39d116df53e1f3a3164db8065aff60a95c9
 const API_BASE_URL = "https://fakestoreapi.com";
+
+/* LOG IN
+AUTENTICACIÓN PARA ENTRAR A LA WEB */
 
 // Función para mostrar u ocultar secciones según el estado de autenticación
 
