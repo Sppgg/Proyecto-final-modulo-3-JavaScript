@@ -73,3 +73,68 @@ button {
 #logout-button:hover {
   background-color: #d32f2f;
 }
+/* Estilos para la ventana modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1; /* Sitúa la modal por encima del contenido */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Habilita el scroll si es necesario */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* Espaciado desde arriba y centrado horizontalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Podrías ajustar el ancho según tus necesidades */
+  max-width: 600px; /* Ancho máximo */
+  position: relative;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Estilos para el formulario dentro de la modal */
+#modal-form-container input,
+#modal-form-container textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+#modal-form-container button {
+  padding: 8px 16px;
+}
+/* Estilos dentro del formulario modal */
+#edit-product-form button {
+  margin-right: 10px;
+  padding: 8px 16px;
+}
+
+#edit-product-form #cancel-button {
+  background-color: #f44336; /* Rojo para el botón de cancelar */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#edit-product-form #cancel-button:hover {
+  background-color: #d32f2f;
+}
