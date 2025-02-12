@@ -1,172 +1,297 @@
-Module 3 Final Project - Codespace Academy: JavaScript and Interactive Webpage
+# Module 3 Final Project - Codespace Academy: JavaScript and Interactive Webpage
 
-Table of Contents
-- [Introduction](#introduction)
-- [Technologies Used](#technologies-used)
+## Table of Contents
+
+- [Module 3 Final Project - Codespace Academy: JavaScript and Interactive Webpage](#module-3-final-project---codespace-academy-javascript-and-interactive-webpage)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+    - [Objectives](#objectives)
+  - [Project Structure](#project-structure)
+  - [Features](#features)
+    - [Algorithms](#algorithms)
+    - [API-Based Web Application](#api-based-web-application)
+  - [Technologies Used](#technologies-used)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Usage](#usage)
+    - [Running the Algorithms](#running-the-algorithms)
+    - [Using the API-Based Web Application](#using-the-api-based-web-application)
+  - [Evaluation Criteria](#evaluation-criteria)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
 
 ---
 
 ## Introduction
-This project is the culmination of the Module 3 curriculum, combining algorithmic problem-solving skills with the development of an interactive web application. The primary objectives are:
-1. To solve logical problems using JavaScript through 20 unique algorithms.
-2. To develop a dynamic, user-friendly webpage that communicates with a public API using GET, POST, PUT, and DELETE requests.
 
-By completing this project, I will demonstrate proficiency in JavaScript, problem-solving, and web development fundamentals.
+This project is the culmination of the Module 3 curriculum at Codespace Academy, combining algorithmic problem-solving skills with the development of an interactive web application. It demonstrates proficiency in JavaScript, problem-solving, and web development fundamentals.
 
----
+### Objectives
 
- Features
-
- Algorithms
-- Solve 20 Algorithms: Organized in the `algorithms` folder, with each solution in its respective file (e.g., `exercise1.js`, `exercise2.js`, etc.).
-- Best Practices: Emphasis on proper use of loops, conditionals, functions, and meaningful naming conventions.
-
- Web Application
-- Data Interaction:
-  - Fetch and display data from a public API (GET).
-  - Add new data via a form (POST).
-  - Update existing data (PUT).
-  - Delete data through UI actions (DELETE).
-- User Interface:
-  - Responsive and visually appealing design.
-  - Features a table or list to display API data.
-  - Interactive form for adding and editing data.
-  - Buttons for data modification and deletion.
+1. **Algorithms**: Solve 20 unique logical problems using JavaScript.
+2. **API-Based Web Application**: Develop a dynamic, user-friendly webpage that interacts with the Fake Store API using GET, POST, PUT, and DELETE requests, including user authentication.
 
 ---
 
- Project Structure
+## Project Structure
+
 The project repository is organized as follows:
+
 ```
-project-final-mod3/
+proyecto-final-modulo-3-JavaScript/
 │
 ├── algorithms/
 │   ├── exercise1.js
 │   ├── exercise2.js
-│   └── ... (up to exercise20.js)
+│   ├── ...
+│   └── exercise20.js
 │
 ├── APIBasedWeb/
-│   ├── index.html
-│   ├── styles.css
-│   ├── script.js
-│   └── README.md
+│   ├── src/
+│   │   ├── index.html
+│   │   ├── login.js
+│   │   ├── main.js
+│   │   ├── style.css
+│   │   └── (additional assets and scripts)
+│   ├── assets/
+│   │   └── (images, icons, etc.)
+│   ├── README.md
+│   └── (other configuration files)
+│
+├── package.json
+├── package-lock.json
+├── vite.config.js (if using Vite)
+└── README.md (this file)
 ```
 
+---
 
+## Features
+
+### Algorithms
+
+- **20 Algorithm Solutions**: Located in the `algorithms` directory, each exercise (`exercise1.js`, `exercise2.js`, ..., `exercise20.js`) contains a JavaScript file solving a unique logical problem.
+- **Clean Code Practices**: Emphasis on proper use of loops, conditionals, functions, and meaningful variable names.
+- **Documentation**: Each algorithm file includes comments explaining the logic and steps taken to solve the problem.
+
+### API-Based Web Application
+
+- **Public API Interaction**:
+  - **GET**: Fetch and display data from the [Fake Store API](https://fakestoreapi.com/).
+  - **POST**: Add new products via a user-friendly form.
+  - **PUT**: Update existing products.
+  - **DELETE**: Remove products through UI actions.
+- **User Authentication**:
+  - **Login Functionality**: Users must log in using the provided credentials to access and modify data.
+    - **Username**: `mor_2314`
+    - **Password**: `83r5^_`
+  - **Protected Routes**: Ensures only authenticated users can modify data.
+- **User Interface**:
+  - Responsive and visually appealing design.
+  - Features a dynamic list to display products from the API.
+  - Interactive forms for adding and editing products in modal windows.
+  - Buttons and confirmations for data modification and deletion.
+  - Modal windows enhance the user experience for editing products.
+- **Local Storage**:
+  - Utilizes local storage to cache API data and authentication tokens for improved performance and user experience.
+- **Error Handling and Validation**:
+  - Informative messages for successful operations and error handling.
+  - Form validations ensure data integrity when adding or editing products.
+
+---
 
 ## Technologies Used
 
- Algorithms
-- JavaScript: To solve logical problems efficiently.
-
- Web Application
-- HTML5: For semantic structure.
-- CSS3: For styling and responsive design.
-- JavaScript: To handle DOM manipulation and API requests.
-- Fetch: For HTTP requests.
-- Git/GitHub: For version control.
-
----
-
- Getting Started
-
- Prerequisites
-Ensure you have the following installed:
-- A code editor (e.g., VS Code).
-- Node.js and npm (if you want to use a development server or Axios).
-- Git for version control.
-
- Steps
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/Sppgg/Proyecto-final-modulo-3-JavaScript.git]
-   ```
-2. Navigate to the repository:
-   ```bash
-   cd proyecto-final-modulo-3
-   ```
-3. Open the project in your preferred code editor.
+- **JavaScript**: For logic implementation, DOM manipulation, and API communication.
+- **HTML5**: Semantic markup for structuring the web application.
+- **CSS3**: Styling and responsive design for optimal user experience.
+- **Fetch API**: To perform HTTP requests to the public API.
+- **Local Storage**: To store user authentication tokens and cache API data.
+- **Git & GitHub**: Version control and collaboration.
+- **Vite**: Development server for faster builds and hot module replacement (optional).
+- **Node.js & npm**: Package management and script running.
 
 ---
 
- Configuration
+## Getting Started
 
- Web Application
-- If using a development server (like Vite):
-  1. Install dependencies:
-     ```bash
-     npm install
-     ```
-  2. Run the development server:
+### Prerequisites
+
+- **Node.js and npm**: To run the development server and manage dependencies.
+- **Git**: For version control.
+- **Code Editor**: Such as Visual Studio Code.
+
+### Installation
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/Sppgg/Proyecto-final-modulo-3-JavaScript.git
+   ```
+
+2. **Navigate to the Project Directory**:
+
+   ```bash
+   cd proyecto-final-modulo-3-JavaScript
+   ```
+
+3. **Install Dependencies** (if using a development server like Vite):
+
+   ```bash
+   npm install
+   ```
+
+---
+
+## Usage
+
+### Running the Algorithms
+
+1. Navigate to the `algorithms` directory:
+
+   ```bash
+   cd algorithms
+   ```
+
+2. Run each exercise individually using Node.js:
+
+   ```bash
+   node exercise1.js
+   ```
+
+   Repeat for each exercise (`exercise2.js`, ..., `exercise20.js`).
+
+### Using the API-Based Web Application
+
+1. **Navigate to the Web Application Directory**:
+
+   ```bash
+   cd APIBasedWeb/src
+   ```
+
+2. **Development Server (Recommended)**:
+
+   - **Start the Server**:
+
      ```bash
      npm run dev
      ```
-  3. Access the project in your browser at `http://localhost:5173`.
 
- SASS (Optional)
-- To use SASS for enhanced styling:
-  1. Install SASS:
-     ```bash
-     npm install -g sass
-     ```
-  2. Compile SASS to CSS:
-     ```bash
-     sass styles.scss styles.css
-     ```
+   - **Access the Application**:
+
+     Open your browser and navigate to `http://localhost:5173`.
+
+3. **Directly via Browser**:
+
+   - Open `index.html` located in the `APIBasedWeb/src` directory in your preferred web browser.
+
+4. **Application Features**:
+
+   - **Login**:
+
+     - Use the following credentials to log in:
+       - **Username**: `mor_2314`
+       - **Password**: `83r5^_`
+     - Upon successful login, an authentication token is stored in local storage.
+
+   - **View Products**:
+
+     - Browse through the list of products fetched from the Fake Store API.
+     - Products are displayed with images, descriptions, and prices.
+
+   - **Add Products**:
+
+     - Click on "Agregar Nuevo Producto" to open a form where you can input product details.
+     - Submit the form to add the product to the list and the API.
+
+   - **Edit Products**:
+
+     - Click the "Editar" button on a product to open a modal window with an editable form.
+     - Update the product information and save changes.
+     - A "Cancelar" button is available to close the modal without saving changes.
+
+   - **Delete Products**:
+
+     - Click the "Eliminar" button on a product to remove it from the list and the API.
+     - Confirmation prompts help prevent accidental deletions.
+
+   - **Logout**:
+
+     - Click the "Cerrar Sesión" button to log out.
+     - The authentication token is removed from local storage, and the user is redirected to the login page.
 
 ---
 
- Usage
+## Evaluation Criteria
 
- Algorithms
-- Navigate to the `algorithms` folder.
-- Open and run each JavaScript file (`exercise1.js`, `exercise2.js`, etc.) to see the solutions.
+| Criterion                         | Weight |
+|-----------------------------------|--------|
+| Algorithm Solutions               | 40%    |
+| Web Application Functionality     | 40%    |
+| Design and User Experience        | 10%    |
+| Documentation and Version Control | 10%    |
 
- Web Application
-1. Open `index.html` in a browser.
-2. Explore the functionalities:
-   - View data fetched from the API.
-   - Add new data using the form.
-   - Edit existing data by clicking the edit button.
-   - Delete unwanted data with the delete button.
+**Bonus Points**:
 
----
-
- Evaluation Criteria
-
-| Criterion                          | Weight |
-|------------------------------------|--------|
-| Algorithm Solutions                | 40%    |
-| Webpage Functionality              | 40%    |
-| Design and User Experience         | 10%    |
-| Documentation and Version Control  | 10%    |
-
-Bonus Points:
-- Add extra form validations.
-- Use Vite as the development server.
+- **Form Validations**: Implement extra validations in forms to enhance data integrity.
+- **Development Server**: Utilize Vite for an optimized development experience.
 
 ---
 
- Contributing
+## Contributing
+
 Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add feature"
-   ```
-4. Push to your branch:
-   ```bash
-   git push origin feature/your-feature
-   ```
-5. Open a Pull Request.
 
-Your contributions are appreciated and help improve this project!
+1. **Fork the Repository**:
+
+   Click the "Fork" button at the top right of the repository page.
+
+2. **Clone Your Forked Repository**:
+
+   ```bash
+   git clone https://github.com/your-username/Proyecto-final-modulo-3-JavaScript.git
+   ```
+
+3. **Create a New Branch**:
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+4. **Commit Your Changes**:
+
+   ```bash
+   git commit -m "Add your descriptive commit message"
+   ```
+
+5. **Push to Your Branch**:
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+6. **Open a Pull Request**:
+
+   Go to the original repository and open a pull request from your forked branch.
 
 ---
 
-Happy Coding! 🚀
-```
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## Acknowledgments
+
+- **Codespace Academy**: For providing the curriculum and resources.
+- **Fake Store API**: For the API used in the web application.
+- **Community Contributors**: For their valuable inputs and improvements.
+
+---
+
+**Happy Coding!** 🚀
+
+---
