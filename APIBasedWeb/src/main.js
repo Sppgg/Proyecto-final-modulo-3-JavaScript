@@ -91,7 +91,7 @@ async function editProduct(id, updatedData) {
           localStorage.setItem("products", JSON.stringify(products));
           // Actualizar la lista de productos y ocultar el formulario de edición
           displayAll(products);
-          document.getElementById("edit-form-container").innerHTML = "";
+          document.getElementById("modal-form-container").innerHTML = "";
       }
   } catch (error) {
       console.error("Error al editar el producto", error);
