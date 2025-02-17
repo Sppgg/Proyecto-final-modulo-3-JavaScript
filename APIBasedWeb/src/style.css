@@ -7,7 +7,12 @@ body {
 h1,
 h2 {
   color: #333;
-  justify-self: anchor-center;
+  text-align: center;
+}
+
+/* Ocultar el contenedor principal por defecto */
+#main-container {
+  display: none;
 }
 
 #products-container > div {
@@ -73,6 +78,7 @@ button {
 #logout-button:hover {
   background-color: #d32f2f;
 }
+
 /* Estilos para la ventana modal */
 .modal {
   display: none; /* Oculto por defecto */
